@@ -1,3 +1,31 @@
+/* Reset CSS sederhana */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, h1, h2, h3, p, ul, ol, li, figure, figcaption, blockquote, dl, dd {
+    margin: 0;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
 /* Background gradasi dan bintang */
 body {
     min-height: 100vh;
@@ -321,4 +349,37 @@ button:hover {
     opacity: 0;
     pointer-events: none;
     position: absolute;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .container {
+        padding: 16px;
+        width: 90vw;
+    }
+    
+    .login-form, .main-page {
+        min-width: unset;
+        width: 100%;
+        padding: 24px 20px;
+    }
+    
+    .profile-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .profile-info h2 {
+        font-size: 1.4rem;
+    }
+    
+    footer {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+    
+    .profile-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
 }

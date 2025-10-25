@@ -198,7 +198,19 @@ backBtn.addEventListener('click', () => {
 });</script>
 
 <footer>
-    <p>© 2025 Muhamad Afif R. | All rights reserved.</p>
+    <p>© 2025 Muhamad Afif R.   |     All rights reserved.       |   <span id="dateTime"></span></p>
 </footer>
+
+<script>function updateDateTime() {
+    const dateTimeSpan = document.getElementById('dateTime');
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    const formattedDate = now.toLocaleDateString('id-ID', options);
+    const formattedTime = now.toLocaleTimeString('id-ID');
+    dateTimeSpan.textContent = `${formattedDate} - ${formattedTime}`;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);</script>
 </body>
 </html>
