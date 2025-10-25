@@ -36,22 +36,26 @@ body {
     overflow: hidden;
 }
 
+/* Pastikan .bg-stars hanya background bintang transparan */
 .bg-stars {
-    background: transparent;
-    pointer-events: none;
-    height: 100vh;
+    position: fixed; /* bisa fixed supaya selalu di belakang */
+    top: 0;
+    left: 0;
     width: 100vw;
-    position: absolute;
-    top: 0; left: 0;
+    height: 100vh;
+    pointer-events: none;
     z-index: 0;
+    background: transparent;
 }
+
 .bg-stars:before {
     content: "";
     position: absolute;
     width: 100vw;
-    height: 94vh;
+    height: 100vh;
     background: url('bg\ 1.jpeg') repeat;
     opacity: 0.15;
+    /* jangan beri warna background di sini */
 }
 
 /* Container form tengah */
