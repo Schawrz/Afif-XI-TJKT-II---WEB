@@ -53,7 +53,7 @@ body {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    background: url('bg\ 1.jpeg') repeat;
+    background: url('bg\ 1.png') repeat;
     opacity: 0.15;
     /* jangan beri warna background di sini */
 }
