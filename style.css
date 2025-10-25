@@ -1,0 +1,324 @@
+/* Background gradasi dan bintang */
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom right, #364fa0 0%, #41116c 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-stars {
+    background: transparent;
+    pointer-events: none;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: 0;
+}
+.bg-stars:before {
+    content: "";
+    position: absolute;
+    width: 100vw;
+    height: 94vh;
+    background: url('bg\ 1.jpeg') repeat;
+    opacity: 0.15;
+}
+
+/* Container form tengah */
+.container {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card transparan dan blur */
+.login-form, .main-page {
+    background: rgba(255,255,255,0.13);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+    backdrop-filter: blur(8px);
+    border-radius: 14px;
+    padding: 36px 38px 20px 38px;
+    min-width: 350px;
+    color: #fff;
+    text-align: center;
+    border: 1.2px solid rgba(255,255,255,0.16);
+}
+
+/* Header Login */
+.login-form h2 {
+    font-size: 2rem;
+    margin-bottom: 26px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Input group dengan ikon */
+.input-group {
+    position: relative;
+    margin-bottom: 18px;
+}
+.input-group input {
+    width: 100%;
+    padding: 11px 40px 11px 18px;
+    border-radius: 22px;
+    border: 1px solid #cccccc40;
+    outline: none;
+    background: rgba(255,255,255,0.10);
+    color: #fff;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+.input-group input::placeholder { color: #f6f6f6b5; }
+.input-icon {
+    position: absolute;
+    right: 14px;
+    top: 52%;
+    transform: translateY(-50%);
+    color: #faf6ff94;
+    font-size: 1.1rem;
+}
+
+/* Opsi dan forgot password */
+.options-row {
+    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95em;
+    color: #eee;
+}
+.options-row label {
+    cursor: pointer;
+}
+.options-row .forgot {
+    color: #e9eaff;
+    text-decoration: none;
+    font-size: 0.98em;
+}
+.options-row .forgot:hover {
+    text-decoration: underline;
+}
+
+/* Tombol login */
+.login-btn {
+    width: 100%;
+    padding: 13px 0;
+    border-radius: 24px;
+    border: none;
+    background: linear-gradient(90deg,#ffd66b 0%,#ffc35c 100%);
+    font-weight: 700;
+    font-size: 1.11rem;
+    color: #333;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 12px rgba(255,215,107,0.14);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.login-btn:hover {
+    background: linear-gradient(90deg,#ffe699 0%,#fcc97e 100%);
+}
+
+/* Register dan pesan error */
+.register {
+    font-size: 0.98em;
+    margin-top: 3px;
+}
+.register a {
+    color: #ffe692;
+    text-decoration: underline;
+}
+.error-msg {
+    color: #ff8585;
+    font-size: 0.95em;
+    min-height: 22px;
+    margin-bottom: -8px;
+}
+
+/* Responsif */
+@media (max-width: 480px) {
+    .login-form, .main-page {
+        min-width: unset;
+        width: 98vw;
+        padding: 16px 4vw 14px 4vw;
+    }
+}
+
+/* Halaman utama */
+.main-page header h1 {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 22px;
+    color: #ffe87d;
+}
+.main-page main {
+    font-size: 1.05rem;
+    color: #f6f6f6;
+}
+.main-page button {
+    margin-top: 24px;
+    background: linear-gradient(90deg,#b974ff 0%,#7f517f 100%);
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 24px;
+    cursor: pointer;
+    transition: 0.14s;
+}
+.main-page button:hover {
+    background: linear-gradient(90deg,#c7a1fd 0%,#8362a9 100%);
+}
+.profile-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 24px 32px;
+    border-radius: 18px;
+    box-shadow: 0 8px 26px rgba(0,0,0,0.24);
+    text-align: center;
+    width: 320px;
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #f1f1f1cc;
+    background: #c7a1fd;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info h2 {
+    margin-bottom: 8px;
+    color: #ffea83;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.profile-info p {
+    margin: 0;
+    font-size: 1.05rem;
+    color: #eee;
+}
+
+.profile-main button {
+    margin-top: 30px;
+}
+.profile-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 18px;
+    justify-content: center;
+}
+
+.profile-buttons button, #backBtn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    background: linear-gradient(90deg,#5db3ff 0%,#2182ff 100%);
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.profile-buttons button:hover, #backBtn:hover {
+    background: linear-gradient(90deg,#7ec3ff 0%,#499bff 100%);
+}
+
+.content {
+    max-width: 400px;
+    margin: 0 auto;
+    color: #eee;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+footer {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fafafa;
+    text-align: center;
+    padding: 14px 20px;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    font-weight: 500;
+}
+
+@media (max-width: 480px) {
+    footer {
+        font-size: 0.8rem;
+        padding: 12px 10px;
+    }
+}
+
+/* Animasi fade-in untuk elemen */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Animasi muncul lambat untuk mempertajam tampilan */
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Animasi transisi gambar profil */
+.profile-photo img {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-photo img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+}
+
+/* Animasi tombol hover */
+button {
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Animasi transisi konten utama */
+.main-page, .login-form {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* Animasi transisi pergantian konten */
+.content, .profile {
+    transition: opacity 0.4s ease;
+}
+
+/* Efek animasi saat menampilkan konten */
+.showing {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.hiding {
+    opacity: 0;
+    pointer-events: none;
+    position: absolute;
+}
