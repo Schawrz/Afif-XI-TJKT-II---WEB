@@ -9,6 +9,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+    <!-- Tombol musik di kanan atas -->
+<button id="musicBtn" class="music-btn" title="Daftar Lagu">🎵</button>
+
+<!-- Panel daftar lagu -->
+<div id="playlistPanel" class="playlist-panel">
+  <h3>Daftar Lagu</h3>
+  <ul id="playlist">
+        <li data-src="No Surprises.mp3">No Surprises</li>
+        <li data-src="Creep.mp3">Creep</li>
+        <li data-src="Fake Plastic Trees.mp3">Fake Plastic Trees</li>
+        <li data-src="I Don't Love You.mp3">I Don't Love You</li>
+        <li data-src="Sparks.mp3">Sparks</li>
+        <li data-src="Nope your too late i already died.mp3">Nope your too late i already died</li>
+        <li data-src="Smells Like Teen Spirit.mp3">Smells Like Teen Spirit</li>
+  </ul>
+  <audio id="audioPlayer" controls style="width: 100%; border-radius: 6px; margin-bottom: 12px;">
+    Your browser does not support the audio element.
+  </audio>
+  <button id="closePlaylist">Tutup</button>
+</div>
     <!-- Background bintang -->
     <div class="bg-stars"></div>
     <div class="container">
@@ -39,6 +59,7 @@
         <h1 id="pageTitle">Profil</h1>
     </header>
     <main class="profile" id="profileContent">
+        
         <div class="profile-photo">
             <img id="profileImg" src="car.jpg" alt="Foto Profil" />
             <input type="file" id="uploadPhoto" accept="image/*" />
@@ -198,7 +219,13 @@ backBtn.addEventListener('click', () => {
 });</script>
 
 <footer>
-    <p>© 2025 Muhamad Afif R.   |    <span id="dateTime"></span>       |  All rights reserved. </p>
+  <p>© 2025 Muhamad Afif R. | <span id="dateTime"></span> | All rights reserved. </p>
+  <button id="soundBtn" class="sound-btn">
+     <span class="sound-label"> Click Me... </span>
+  </button>
+  <audio id="mySound">
+    <source src="bgm.mp3" type="audio/mpeg">
+  </audio>
 </footer>
 
 <script>function updateDateTime() {
@@ -212,6 +239,69 @@ backBtn.addEventListener('click', () => {
 
 updateDateTime();
 setInterval(updateDateTime, 1000);</script>
-</body>
 
+<script>const soundBtn = document.getElementById('soundBtn');
+const mySound = document.getElementById('mySound');
+
+soundBtn.addEventListener('click', function() {
+  mySound.currentTime = 0;
+  mySound.play();
+});</script>
+<script>const musicBtn = document.getElementById('musicBtn');
+const playlistPanel = document.getElementById('playlistPanel');
+const closePlaylist = document.getElementById('closePlaylist');
+const playlist = document.getElementById('playlist');
+const audioPlayer = document.getElementById('audioPlayer');
+
+musicBtn.addEventListener('click', () => {
+  playlistPanel.style.display = (playlistPanel.style.display === 'block') ? 'none' : 'block';
+});
+
+closePlaylist.addEventListener('click', () => {
+  playlistPanel.style.display = 'none';
+});
+
+// Mainkan lagu saat klik judul daftar lagu
+playlist.querySelectorAll('li').forEach(item => {
+  item.addEventListener('click', () => {
+    const src = item.getAttribute('data-src');
+    if (src) {
+      audioPlayer.src = src;
+      audioPlayer.play();
+    }
+  });
+});
+
+</script>
+<script>document.addEventListener('DOMContentLoaded', () => {
+  const musicBtn = document.getElementById('musicBtn');
+  const playlistPanel = document.getElementById('playlistPanel');
+  const closePlaylist = document.getElementById('closePlaylist');
+
+  musicBtn.addEventListener('click', () => {
+    if (playlistPanel.classList.contains('show')) {
+      // Mulai animasi penutupan dengan class 'hide'
+      playlistPanel.classList.remove('show');
+      playlistPanel.classList.add('hide');
+    } else {
+      // Tampilkan panel dengan animasi masuk
+      playlistPanel.classList.remove('hide');
+      playlistPanel.classList.add('show');
+    }
+  });
+
+  // Setelah animasi hide selesai, hilangkan kelas 'hide' agar bisa muncul lagi nanti
+  playlistPanel.addEventListener('transitionend', () => {
+    if (playlistPanel.classList.contains('hide')) {
+      playlistPanel.classList.remove('hide');
+    }
+  });
+
+  closePlaylist.addEventListener('click', () => {
+    // Tutup panel via tombol Tutup
+    playlistPanel.classList.remove('show');
+    playlistPanel.classList.add('hide');
+  });
+});</script>
+</body>
 </html>
