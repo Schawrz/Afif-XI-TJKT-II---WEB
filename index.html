@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Login dan Halaman Utama</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Untuk ikon fontawesome -->
+   
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <!-- Tombol musik di kanan atas -->
+    
+   
 <button id="musicBtn" class="music-btn" title="Daftar Lagu">🎵</button>
 
-<!-- Panel daftar lagu -->
+
 <div id="playlistPanel" class="playlist-panel">
   <h3>Daftar Lagu</h3>
   <ul id="playlist">
@@ -29,11 +30,11 @@
   </audio>
   <button id="closePlaylist">Tutup</button>
 </div>
-    <!-- Background bintang -->
+    
     <div class="bg-stars"></div>
     <div class="container">
 
-        <!-- Form Login -->
+    
         <form id="loginForm" class="login-form">
             <h2>Login</h2>
             <div class="input-group">
@@ -53,7 +54,7 @@
             <p id="error-msg" class="error-msg"></p>
         </form>
         
-        <!-- Halaman Utama -->
+     
        <div id="mainPage" class="main-page" style="display: none;">
     <header>
         <h1 id="pageTitle">Profil</h1>
@@ -81,19 +82,19 @@
     </main>
 </div>
 
-    <script>// Fungsi untuk menampilkan elemen dengan animasi fade in
+    <script>
 function showElement(el) {
     el.classList.remove('hiding');
     el.classList.add('fade-in', 'showing');
 }
 
-// Fungsi untuk menyembunyikan elemen dengan animasi fade out
+
 function hideElement(el) {
     el.classList.remove('fade-in', 'showing');
     el.classList.add('hiding');
 }
 
-// Ubah event listener login:
+
 loginForm.addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -116,7 +117,7 @@ logoutBtn.addEventListener('click', function() {
     errorMsg.textContent = '';
 });
 
-// About and Contact button listeners:
+
 aboutBtn.addEventListener('click', () => {
     pageTitle.textContent = "About Me";
     hideElement(profileContent);
@@ -204,7 +205,8 @@ contactBtn.addEventListener('click', () => {
     profileContent.style.display = 'none';
     contentText.innerHTML = `<p>Apa Itu Website?  
 Website adalah kumpulan halaman di internet yang berisi informasi seperti gambar, suara, dan teks yang bisa diakses oleh siapa saja, kapan saja dan di mana saja melalui browser di perangkat seperti komputer atau ponsel.
-  
+
+Fungsi dan Manfaat Website  
 Website memiliki banyak fungsi, mulai dari untuk menjalankan bisnis, berbagi informasi, hingga sebagai media belajar. Dengan website, orang bisa mencari tahu tentang sesuatu, berbelanja online, atau bahkan belajar membuat website sendiri
 
 </p>`;
@@ -225,6 +227,7 @@ backBtn.addEventListener('click', () => {
   <audio id="mySound">
     <source src="bgm.mp3" type="audio/mpeg">
   </audio>
+  
 </footer>
 
 <script>function updateDateTime() {
@@ -260,7 +263,7 @@ closePlaylist.addEventListener('click', () => {
   playlistPanel.style.display = 'none';
 });
 
-// Mainkan lagu saat klik judul daftar lagu
+
 playlist.querySelectorAll('li').forEach(item => {
   item.addEventListener('click', () => {
     const src = item.getAttribute('data-src');
@@ -279,17 +282,17 @@ playlist.querySelectorAll('li').forEach(item => {
 
   musicBtn.addEventListener('click', () => {
     if (playlistPanel.classList.contains('show')) {
-      // Mulai animasi penutupan dengan class 'hide'
+  
       playlistPanel.classList.remove('show');
       playlistPanel.classList.add('hide');
     } else {
-      // Tampilkan panel dengan animasi masuk
+    
       playlistPanel.classList.remove('hide');
       playlistPanel.classList.add('show');
     }
   });
 
-  // Setelah animasi hide selesai, hilangkan kelas 'hide' agar bisa muncul lagi nanti
+
   playlistPanel.addEventListener('transitionend', () => {
     if (playlistPanel.classList.contains('hide')) {
       playlistPanel.classList.remove('hide');
@@ -297,12 +300,25 @@ playlist.querySelectorAll('li').forEach(item => {
   });
 
   closePlaylist.addEventListener('click', () => {
-    // Tutup panel via tombol Tutup
+   
     playlistPanel.classList.remove('show');
     playlistPanel.classList.add('hide');
   });
 });</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<div class="sosmed-bar">
+  <a href="https://www.tiktok.com/@zafkiel40?_t=ZS-90vNY2xJ9Ck&_r=1" target="_blank" class="tiktok" title="Tiktok">
+    <i class="fab fa-tiktok"></i>
+  </a>
+  <a href="https://www.instagram.com/mafiro_11?igsh=ZHl0b3k0Y2VpY3Jq" target="_blank" class="instagram" title="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://wa.me/qr/R6EA33PYKGGEN1" target="_blank" class="whatsapp" title="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
 </body>
-
 </html>
-

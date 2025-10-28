@@ -1,4 +1,4 @@
-/* Reset CSS sederhana */
+
 *,
 *::before,
 *::after {
@@ -26,7 +26,7 @@ button, input, select, textarea {
     line-height: inherit;
 }
 
-/* Background gradasi dan bintang */
+
 body {
     min-height: 100vh;
     margin: 0;
@@ -36,9 +36,9 @@ body {
     overflow: hidden;
 }
 
-/* Pastikan .bg-stars hanya background bintang transparan */
+
 .bg-stars {
-    position: fixed; /* bisa fixed supaya selalu di belakang */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100vw;
@@ -55,10 +55,10 @@ body {
     height: 100vh;
     background: url('bg\ 1.png') repeat;
     opacity: 0.15;
-    /* jangan beri warna background di sini */
+
 }
 
-/* Container form tengah */
+
 .container {
     position: relative;
     z-index: 2;
@@ -68,7 +68,7 @@ body {
     align-items: center;
 }
 
-/* Card transparan dan blur */
+
 .login-form, .main-page {
     background: rgba(255,255,255,0.13);
     box-shadow: 0 8px 24px rgba(0,0,0,0.18);
@@ -81,7 +81,7 @@ body {
     border: 1.2px solid rgba(255,255,255,0.16);
 }
 
-/* Header Login */
+
 .login-form h2 {
     font-size: 2rem;
     margin-bottom: 26px;
@@ -89,7 +89,7 @@ body {
     letter-spacing: 2px;
 }
 
-/* Input group dengan ikon */
+
 .input-group {
     position: relative;
     margin-bottom: 18px;
@@ -115,7 +115,7 @@ body {
     font-size: 1.1rem;
 }
 
-/* Opsi dan forgot password */
+
 .options-row {
     margin-bottom: 18px;
     display: flex;
@@ -136,7 +136,7 @@ body {
     text-decoration: underline;
 }
 
-/* Tombol login */
+
 .login-btn {
     width: 100%;
     padding: 13px 0;
@@ -155,7 +155,7 @@ body {
     background: linear-gradient(90deg,#ffe699 0%,#fcc97e 100%);
 }
 
-/* Register dan pesan error */
+
 .register {
     font-size: 0.98em;
     margin-top: 3px;
@@ -171,7 +171,7 @@ body {
     margin-bottom: -8px;
 }
 
-/* Responsif */
+
 @media (max-width: 480px) {
     .login-form, .main-page {
         min-width: unset;
@@ -180,7 +180,7 @@ body {
     }
 }
 
-/* Halaman utama */
+
 .main-page header h1 {
     font-weight: 600;
     font-size: 1.2rem;
@@ -286,7 +286,7 @@ footer {
     background-color: rgba(255, 255, 255, 0.1);
     color: #fafafa;
     text-align: center;
-    padding: 14px 20px;
+    padding: 21px 20px;
     font-size: 0.9rem;
     position: fixed;
     bottom: 0;
@@ -303,18 +303,18 @@ footer {
     }
 }
 
-/* Animasi fade-in untuk elemen */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Animasi muncul lambat untuk mempertajam tampilan */
+
 .fade-in {
     animation: fadeIn 0.5s ease forwards;
 }
 
-/* Animasi transisi gambar profil */
+
 .profile-photo img {
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -324,7 +324,7 @@ footer {
     box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
 }
 
-/* Animasi tombol hover */
+
 button {
     transition: background 0.3s ease, transform 0.2s ease;
 }
@@ -333,17 +333,17 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Animasi transisi konten utama */
+
 .main-page, .login-form {
     animation: fadeIn 0.6s ease forwards;
 }
 
-/* Animasi transisi pergantian konten */
+
 .content, .profile {
     transition: opacity 0.4s ease;
 }
 
-/* Efek animasi saat menampilkan konten */
+
 .showing {
     opacity: 1;
     pointer-events: auto;
@@ -355,7 +355,7 @@ button:hover {
     position: absolute;
 }
 
-/* Responsif */
+
 @media (max-width: 768px) {
     .container {
         padding: 16px;
@@ -391,14 +391,14 @@ button:hover {
 .sound-btn {
   position: fixed;
   right: 18px;
-  bottom: 22px;
+  bottom: 10px;
   z-index: 1001;
   background: #2d2c6e;
   color: #ffe66b;
   border: none;
   outline: none;
   border-radius: 42px;
-  padding: 9px 19px 9px 13px;
+  padding: 9px 19px 9px 19px;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -448,7 +448,7 @@ button:hover {
 
 .playlist-panel {
   position: fixed;
-  top: 48px;
+  top: 60px;
   right: 12px;
   width: 280px;
   max-height: 400px;
@@ -459,16 +459,16 @@ button:hover {
   overflow-y: auto;
   z-index: 1450;
   
-  /* Animasi awal: sembunyi */
+ 
   opacity: 0;
   transform: translateX(20px);
   pointer-events: none;
 
-  /* Transisi */
+  
   transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-/* Saat playlist aktif/tampil */
+
 .playlist-panel.show {
   opacity: 1;
   transform: translateX(0);
@@ -513,3 +513,34 @@ button:hover {
 #closePlaylist:hover {
   background: #ff2929;
 }
+
+.sosmed-bar {
+  position: fixed;
+  left: 20px;
+  bottom: 75px; 
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 99;
+}
+
+.sosmed-bar a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  color: #fff;
+  font-size: 28px;
+  border-radius: 50%;
+  background: #222;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.sosmed-bar a.tiktok { background: #000; }
+.sosmed-bar a.instagram { background: radial-gradient(circle at 30% 110%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+.sosmed-bar a.whatsapp { background: #25d366; }
+
+.sosmed-bar a:hover { opacity: 0.85;}
